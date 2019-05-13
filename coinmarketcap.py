@@ -65,8 +65,8 @@ class CoinCollector():
 if __name__ == '__main__':
 	try:
 		parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-		parser.add_argument('--port', nargs='?', const=9101, help='The TCP port to listen on', default=9101)
-		parser.add_argument('--addr', nargs='?', const='0.0.0.0', help='The interface to bind to', default='0.0.0.0')
+		parser.add_argument('--port', nargs='?', const=9101, help='The TCP port to listen on', default=9101) # Might need to change the port binding
+		parser.add_argument('--addr', nargs='?', const='0.0.0.0', help='The interface to bind to', default='0.0.0.0') # Need to chnage address binding to local docker address
 		args = parser.parse_args()
 		log.info('listening on http://%s:%d/metrics' % (args.addr, args.port))
 
